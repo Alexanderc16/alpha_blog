@@ -1,0 +1,26 @@
+$navbar-default-bg: #599c59;
+
+.navbar {
+background-color: #599c59 !important;
+}
+
+.navbar-brand {
+font-size: 3rem;
+}
+
+@import 'bootstrap/dist/css/bootstrap';
+
+#logo{
+  float:left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#first_item{
+  text-decoration: none;
+}
+
+.center{
+  text-align: center;
+}
