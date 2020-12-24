@@ -1,12 +1,18 @@
+<style>
+    body{
+        background-color: #eaeaea;
+    }
+</style>
+<br>
 <h1 align = "center">All blog users </h1>
-<div align ="center">
+<div align ="center" >
     <%= will_paginate %>
     <% @users.each do |user| %>
-        <ul class="listing">
-            <div class="row">
-                <div class = "well col-md-4 offset-md-4">
+        <ul class="listing" >
+            <div class="row" >
+                <div class = "well col-md-4 offset-md-4" >
                     <li><%= link_to gravatar_for(user), user_path(user) %></li>
-                    <li class="article-title">
+                    <li class="article-title" >
                         <%= link_to user.username, user_path(user) %>
                     </li>
                     <li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
@@ -14,6 +20,7 @@
                         <li><%= link_to "Delete this user", user_path(user), method: :delete, 
                             data: { confirm: "Are you sure you want to delete this user and all their articles"} %></li>
                     <% end %>
+                  <hr>
                 </div>
             </div>
         </ul>

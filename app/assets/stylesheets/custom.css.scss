@@ -124,5 +124,14 @@ footer ul li{
 }
 
 .alert.error {
-  background-color: red;
+  background-color: #ff0000;
+}
+
+.dropdown-item {
+  float: right;
+  position: absolute;
+  display: flex;
+  margin-left: 50%;
+  margin-right: 50%;
+  text-align: center;
 }

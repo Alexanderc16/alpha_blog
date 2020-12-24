@@ -6,7 +6,7 @@
   <% if @article.user %>
     <ul class="listing">
       <div class="row center">
-        <div class = "col-md-4 offset-md-4">
+        <div class = "col-md-4 offset-md-4" style="padding: 10px">
           <li>Created by:</li>
           <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
           <li class="article-title">
@@ -18,16 +18,21 @@
     </ul>
   <% end %>
   <h4 class="center"><strong> Description: </strong> </h4>
-  <hr>
+
   <h4 align="center"> <%= @article.description %></h4>
   
-  <div class="article-actions", align="center">
+  <div class="article-actions"
+       style="display: inline;
+         width: 60%;
+         margin-left: 30%;
+         margin-right: 70%;" >
   <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to "Delete this article", articles_path(@article), method: :delete ,  
       data: {confirm: "Are you sure?"},
       class: "btn btn-xs btn-danger" %>
     <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary"%>
-    <%= link_to "Back to articles list", articles_path, class: "btn btn-xs btn-success" %> 
+    <%= link_to "Back to articles list", articles_path, class: "btn btn-xs btn-success" %>
+      <br>
   <% end %>
   </div>
   <br>
