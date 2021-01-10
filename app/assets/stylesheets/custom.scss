@@ -1,7 +1,9 @@
 $navbar-default-bg: black;
 
+@import 'bootstrap/dist/css/bootstrap';
+
 .navbar {
-background-color: #599c59 !important;
+background-color: black !important;
 }
 
 .navbar-brand {
@@ -11,8 +13,6 @@ font-size: 3rem;
 .dropdown-menu{
   text-align: center;
 }
-
-@import 'bootstrap/dist/css/bootstrap';
 
 .alert {
   -moz-border-radius: 4px 4px 4px 4px;

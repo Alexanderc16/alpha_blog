@@ -7,6 +7,7 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap', '~> 4.5.3'
 gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
 # Use Puma as the app server

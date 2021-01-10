@@ -16,6 +16,9 @@
               <%= time_ago_in_words(article.created_at)%> ago,
               last updated: <%= time_ago_in_words(article.updated_at)%> ago
             </small>
+            <% if article.categories.any? %>
+              <div class="center mr-2"> <%= render article.categories %></div>
+            <% end %>
           </div>
         </div>
         <% if logged_in? && (current_user == article.user || current_user.admin?) %>
@@ -24,6 +27,7 @@
                  width: 60%;
                  margin-left: auto;
                  margin-right: auto;" >
+
             <%= link_to "Back to articles list", articles_path, class: "btn btn-xs btn-success" %> 
             <%= link_to "Delete this article", articles_path(article), method: :delete ,  
                 data: {confirm: "Are you sure?"},

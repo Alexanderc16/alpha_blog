@@ -5,12 +5,10 @@
     margin-right: auto;">
     <div class="alert alert-danger" role="alert">
       <h4 class="alert-heading">
-      
         <%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:
       </h4>
       <ul>
         <% @article.errors.full_messages.each do |msg| %>
-        
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -40,7 +38,17 @@
             <%= f.text_area :description, class:"form-control", placeholder: "Body of article" %>
           </div>
         </div>
-            <br>
+
+      <div class="form-group">
+        <div class="control-label sm-2">
+          <%= f.label :categories %>
+        </div>
+        <div class="sm-8">
+          <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                                  { prompt: "Make your selection"}, { multiple: true, class: "custom-select"}) %>
+        </div>
+      </div>
+      <br>
         <div class="form-group" style="display: block;
           width: 50%;
           margin-left: auto;
@@ -53,5 +61,5 @@
           </div>
         </div>
     <% end %>
-
-
+  </div>
+</div>
